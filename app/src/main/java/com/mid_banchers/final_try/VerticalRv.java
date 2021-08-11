@@ -32,7 +32,7 @@ public Context context;
 
     @Override
     public int getItemCount() {
-        return 6;
+        return 8;
     }
 
     public class VerticalViewHolder extends RecyclerView.ViewHolder {
