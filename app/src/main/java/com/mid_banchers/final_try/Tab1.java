@@ -39,8 +39,6 @@ FragmentTab1Binding binding;
         binding.rvcatagoryHori.setAdapter(adapter);
         binding.rvcatagoryHori.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,true));
 
-        verticalRv = new VerticalRv(getContext());
-        binding.rvlatestver.setAdapter(verticalRv);
-        binding.rvlatestver.setLayoutManager(new GridLayoutManager(getContext(),2));
+
     }
 }
