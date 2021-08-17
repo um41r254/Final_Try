@@ -19,7 +19,7 @@ import com.mid_banchers.final_try.TabAdapter;
 
 public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private final Context context;
+    private final MainActivity context;
 
     public AdapterHome(MainActivity mainActivity) {
         this.context = mainActivity;
@@ -32,11 +32,11 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if (viewType == 0) {
             View view = LayoutInflater.from(parent.getContext()).
                     inflate(R.layout.recycler_0, parent, false);
-            return new HolderA(view);
+            return new HolderX(view);
         } else if (viewType == 1) {
             View view = LayoutInflater.from(parent.getContext()).
                     inflate(R.layout.recycler_1, parent, false);
-            return new HolderX(view);
+            return new HolderA(view);
         } else if (viewType == 2) {
             View view = LayoutInflater.from(parent.getContext()).
                     inflate(R.layout.recycler_1_heading, parent, false);
@@ -96,8 +96,7 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             viewPager = itemView.findViewById(R.id.cat_pager);
             tabLayout = itemView.findViewById(R.id.cata_tabs);
 
-           /* TabAdapter tabAdapter = new TabAdapter((FragmentActivity) context);
-            viewPager.setAdapter(tabAdapter);
+            viewPager.setAdapter(new TabAdapter(context));
 
             new TabLayoutMediator(tabLayout, viewPager, (TabLayout.Tab tab, int position) -> {
                 if (position == 0) {
@@ -112,7 +111,7 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 if (position == 3) {
                     tab.setText("Bridal");
                 }
-            }).attach();*/
+            }).attach();
         }
 
 

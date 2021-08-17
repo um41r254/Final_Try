@@ -6,6 +6,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import com.mid_banchers.final_try.adapters.AdapterHome;
 import com.mid_banchers.final_try.databinding.ActivityMainBinding;
 
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
-        adapter = new AdapterHome(this);
+        adapter = new AdapterHome(MainActivity.this);
 
 
         binding.include.rvlatestver.setAdapter(adapter);
@@ -48,8 +50,9 @@ public class MainActivity extends AppCompatActivity {
         binding.include.rvlatestver.setLayoutManager(gridLayoutManager);
         // binding.catPager.setUserInputEnabled(false);
 
+/*
 
-     /*   tabAdapter = new TabAdapter(this);
+        tabAdapter = new TabAdapter(MainActivity.this);
         binding.catPager.setAdapter(tabAdapter);
         new TabLayoutMediator(binding.cataTabs, binding.catPager, (TabLayout.Tab tab, int position) -> {
             if (position == 0) {
@@ -65,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 tab.setText("Bridal");
             }
 
-        }).attach();*/
+        }).attach();
+*/
 
     }
 }
