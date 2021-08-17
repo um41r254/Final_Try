@@ -75,28 +75,17 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     public class HolderX extends RecyclerView.ViewHolder {
-
-        public HolderX(@NonNull View itemView) {
-            super(itemView);
-        }
-    }
-
-    public class HolderY extends RecyclerView.ViewHolder {
-        public HolderY(@NonNull View itemView) {
-            super(itemView);
-        }
-    }
-
-    public class HolderA extends RecyclerView.ViewHolder {
         ViewPager2 viewPager;
         TabLayout tabLayout;
 
-        public HolderA(@NonNull View itemView) {
+        public HolderX(@NonNull View itemView) {
             super(itemView);
+
             viewPager = itemView.findViewById(R.id.cat_pager);
             tabLayout = itemView.findViewById(R.id.cata_tabs);
+            viewPager.setUserInputEnabled(false);
 
-           /* TabAdapter tabAdapter = new TabAdapter((FragmentActivity) context);
+            TabAdapter tabAdapter = new TabAdapter((FragmentActivity) context);
             viewPager.setAdapter(tabAdapter);
 
             new TabLayoutMediator(tabLayout, viewPager, (TabLayout.Tab tab, int position) -> {
@@ -112,7 +101,22 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 if (position == 3) {
                     tab.setText("Bridal");
                 }
-            }).attach();*/
+            }).attach();
+        }
+    }
+
+    public class HolderY extends RecyclerView.ViewHolder {
+        public HolderY(@NonNull View itemView) {
+            super(itemView);
+        }
+    }
+
+    public class HolderA extends RecyclerView.ViewHolder {
+
+
+        public HolderA(@NonNull View itemView) {
+            super(itemView);
+
         }
 
 

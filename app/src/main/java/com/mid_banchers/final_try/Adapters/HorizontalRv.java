@@ -1,4 +1,4 @@
-package com.mid_banchers.final_try.Adapters;
+package com.mid_banchers.final_try.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

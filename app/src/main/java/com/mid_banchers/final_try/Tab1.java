@@ -12,13 +12,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mid_banchers.final_try.Adapters.HorizontalRv;
-import com.mid_banchers.final_try.Adapters.VerticalRv;
+import com.mid_banchers.final_try.adapters.HorizontalRv;
 import com.mid_banchers.final_try.databinding.FragmentTab1Binding;
 
 public class Tab1 extends Fragment {
 HorizontalRv adapter;
-VerticalRv verticalRv;
+
 
     public Tab1() {
 
