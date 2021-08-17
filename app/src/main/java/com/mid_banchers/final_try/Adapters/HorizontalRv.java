@@ -1,8 +1,7 @@
-package com.mid_banchers.final_try;
+package com.mid_banchers.final_try.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
