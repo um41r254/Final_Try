@@ -13,10 +13,11 @@ import com.mid_banchers.final_try.adapters.NewAdapter;
 import com.mid_banchers.final_try.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
+
     ActivityMainBinding binding;
-    TabAdapter tabAdapter;
     AdapterHome adapter;
     //NewAdapter adapter;
+
 
 
     @Override
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         binding.include.rvlatestver.setLayoutManager(gridLayoutManager);
-        // binding.catPager.setUserInputEnabled(false);
+
 
 /*
 

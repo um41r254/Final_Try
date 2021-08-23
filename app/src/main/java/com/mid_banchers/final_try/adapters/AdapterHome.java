@@ -75,29 +75,23 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     }
 
     public class HolderX extends RecyclerView.ViewHolder {
-
-        public HolderX(@NonNull View itemView) {
-            super(itemView);
-        }
-    }
-
-    public class HolderY extends RecyclerView.ViewHolder {
-        public HolderY(@NonNull View itemView) {
-            super(itemView);
-        }
-    }
-
-    public class HolderA extends RecyclerView.ViewHolder {
         ViewPager2 viewPager;
         TabLayout tabLayout;
 
-        public HolderA(@NonNull View itemView) {
+        public HolderX(@NonNull View itemView) {
             super(itemView);
+
             viewPager = itemView.findViewById(R.id.cat_pager);
             tabLayout = itemView.findViewById(R.id.cata_tabs);
+            viewPager.setUserInputEnabled(false);
 
+ 
             viewPager.setAdapter(new TabAdapter(context));
             viewPager.setUserInputEnabled(false);
+
+            TabAdapter tabAdapter = new TabAdapter((FragmentActivity) context);
+            viewPager.setAdapter(tabAdapter);
+
 
             new TabLayoutMediator(tabLayout, viewPager, (TabLayout.Tab tab, int position) -> {
                 if (position == 0) {
@@ -113,6 +107,23 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                     tab.setText("Bridal");
                 }
             }).attach();
+
+        }
+    }
+
+    public class HolderY extends RecyclerView.ViewHolder {
+        public HolderY(@NonNull View itemView) {
+            super(itemView);
+        }
+    }
+
+    public class HolderA extends RecyclerView.ViewHolder {
+
+
+        public HolderA(@NonNull View itemView) {
+            super(itemView);
+
+
         }
     }
 }
