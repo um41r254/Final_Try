@@ -124,7 +124,8 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public HolderA(@NonNull View itemView) {
             super(itemView);
 
-            String name = "ALI";
+            String name = "Umair";
+
 
         }
     }
