@@ -97,6 +97,7 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             tabLayout = itemView.findViewById(R.id.cata_tabs);
 
             viewPager.setAdapter(new TabAdapter(context));
+            viewPager.setUserInputEnabled(false);
 
             new TabLayoutMediator(tabLayout, viewPager, (TabLayout.Tab tab, int position) -> {
                 if (position == 0) {
@@ -113,7 +114,5 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 }
             }).attach();
         }
-
-
     }
 }

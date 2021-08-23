@@ -9,12 +9,14 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.mid_banchers.final_try.adapters.AdapterHome;
+import com.mid_banchers.final_try.adapters.NewAdapter;
 import com.mid_banchers.final_try.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
     TabAdapter tabAdapter;
     AdapterHome adapter;
+    //NewAdapter adapter;
 
 
     @Override
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
         adapter = new AdapterHome(MainActivity.this);
+        //adapter = new NewAdapter();
 
 
         binding.include.rvlatestver.setAdapter(adapter);
