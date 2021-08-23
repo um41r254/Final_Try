@@ -6,16 +6,21 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.mid_banchers.final_try.adapters.AdapterHome;
+import com.mid_banchers.final_try.adapters.DataModel;
 import com.mid_banchers.final_try.adapters.NewAdapter;
 import com.mid_banchers.final_try.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
+FirebaseFirestore fs = FirebaseFirestore.getInstance();
     ActivityMainBinding binding;
     AdapterHome adapter;
+    DataModel dataModel;
     //NewAdapter adapter;
 
 
@@ -28,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(view);
         adapter = new AdapterHome(MainActivity.this);
         //adapter = new NewAdapter();
+        fs.collection("Mehndi Designs").document("Recycle 0")
+                .get().addOnSuccessListener(documentSnapshot -> {
+                    dataModel = documentSnapshot.toObject(DataModel.class);
+                    adapter.getData(dataModel);
+                });
+
 
 
         binding.include.rvlatestver.setAdapter(adapter);

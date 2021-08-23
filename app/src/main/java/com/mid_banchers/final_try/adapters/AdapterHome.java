@@ -1,15 +1,14 @@
 package com.mid_banchers.final_try.adapters;
 
-import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
@@ -18,6 +17,8 @@ import com.mid_banchers.final_try.MainActivity;
 import com.mid_banchers.final_try.R;
 import com.mid_banchers.final_try.TabAdapter;
 
+import static android.content.ContentValues.TAG;
+
 public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final MainActivity context;
@@ -25,6 +26,7 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public AdapterHome(MainActivity mainActivity) {
         this.context = mainActivity;
     }
+DataModel data;
 
     @NonNull
     @Override
@@ -51,6 +53,7 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+//        ((HolderX) holder).heading.setText("hjdmkjjd");
 
     }
 
@@ -74,21 +77,47 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public int getItemCount() {
         return 15;
     }
+    public void getData(DataModel dataModel){
+        data = dataModel;
+        Log.d(TAG, "getData: "+data.getHeading());
+
+
+    }
 
     public class HolderX extends RecyclerView.ViewHolder {
-        ViewPager2 viewPager;
-        TabLayout tabLayout;
+        TextView heading;
+
 
         public HolderX(@NonNull View itemView) {
             super(itemView);
+            heading = itemView.findViewById(R.id.bannerHeading);
+            heading.setText(data.getHeading());
 
+
+        }
+    }
+
+    public class HolderY extends RecyclerView.ViewHolder {
+        public HolderY(@NonNull View itemView) {
+            super(itemView);
+
+
+        }
+    }
+
+    public class HolderA extends RecyclerView.ViewHolder {
+        ViewPager2 viewPager;
+        TabLayout tabLayout;
+
+        public HolderA(@NonNull View itemView) {
+            super(itemView);
             viewPager = itemView.findViewById(R.id.cat_pager);
             tabLayout = itemView.findViewById(R.id.cata_tabs);
             viewPager.setUserInputEnabled(false);
 
- 
+
             viewPager.setAdapter(new TabAdapter(context));
-            viewPager.setUserInputEnabled(false);
+
 
             TabAdapter tabAdapter = new TabAdapter((FragmentActivity) context);
             viewPager.setAdapter(tabAdapter);
@@ -109,22 +138,7 @@ public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
                 }
             }).attach();
 
-        }
-    }
 
-    public class HolderY extends RecyclerView.ViewHolder {
-        public HolderY(@NonNull View itemView) {
-            super(itemView);
-        }
-    }
-
-    public class HolderA extends RecyclerView.ViewHolder {
-
-
-        public HolderA(@NonNull View itemView) {
-            super(itemView);
-
-            String name = "Umair";
 
 
         }
