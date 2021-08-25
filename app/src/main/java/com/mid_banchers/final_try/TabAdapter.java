@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class TabAdapter extends FragmentStateAdapter {
+    Tab2 ad= new Tab2();
     public TabAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
@@ -13,11 +14,25 @@ public class TabAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        return new Tab1();
+        if (position==0) {
+
+            return new Tab1();
+        }
+         if (position==1) {
+//             ad.setSet("yes");
+            return ad;
+        }
+         if (position==2) {
+
+            return new Tab3();
+        }
+        else
+            return new Tab4();
+
     }
 
     @Override
     public int getItemCount() {
-        return 4;
+        return 4 ;
     }
 }

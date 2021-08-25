@@ -40,11 +40,10 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/discripsion"
                 android:layout_width="121dp"
                 android:layout_height="68dp"
                 android:layout_marginTop="16dp"
-                android:text="HD Collection of Packs in Specific Categories"
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/bannerHeading"
@@ -59,7 +58,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Mehndi Packs"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#000000"
@@ -81,7 +79,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView4" />
+                app:layout_constraintTop_toTopOf="@+id/discripsion" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

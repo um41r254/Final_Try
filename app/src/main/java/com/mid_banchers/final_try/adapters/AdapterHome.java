@@ -4,6 +4,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.mid_banchers.final_try.MainActivity;
@@ -22,11 +24,11 @@ import static android.content.ContentValues.TAG;
 public class AdapterHome extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final MainActivity context;
-
+    DataModel data= new DataModel();
     public AdapterHome(MainActivity mainActivity) {
         this.context = mainActivity;
     }
-DataModel data;
+
 
     @NonNull
     @Override
@@ -53,7 +55,14 @@ DataModel data;
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-//        ((HolderX) holder).heading.setText("hjdmkjjd");
+     if (position==0){
+
+//         ((HolderX) holder).heading.setText(data.getHeading());
+//         ((HolderX) holder).disp.setText(data.getDisp());
+//         Glide.with(((HolderX)holder).bannerImage).load(data.getImage());
+
+
+     }
 
     }
 
@@ -75,23 +84,28 @@ DataModel data;
 
     @Override
     public int getItemCount() {
-        return 15;
+        return 14;
     }
     public void getData(DataModel dataModel){
+
         data = dataModel;
         Log.d(TAG, "getData: "+data.getHeading());
+        notifyDataSetChanged();
 
 
     }
 
     public class HolderX extends RecyclerView.ViewHolder {
         TextView heading;
+        TextView disp;
+        ImageView bannerImage;
 
 
         public HolderX(@NonNull View itemView) {
             super(itemView);
             heading = itemView.findViewById(R.id.bannerHeading);
-            heading.setText(data.getHeading());
+            disp = itemView.findViewById(R.id.discripsion);
+            bannerImage = itemView.findViewById(R.id.imageView5);
 
 
         }
